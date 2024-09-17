@@ -4,7 +4,6 @@ matplotlib
 seaborn
 torch
 torchvision
-warnings
 einops
 scikit-learn
 pillow
