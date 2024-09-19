@@ -7,26 +7,26 @@ This project covers two main tasks: Image Reconstruction and Audio Reconstructio
 Random Fourier Features (RFF) approximate kernel functions (such as the Radial Basis Function (RBF) kernel) by mapping input data into a higher-dimensional feature space. This allows linear models to approximate non-linear relationships. 
 
 ### Formula for RBF Kernel:
-The RBF kernel between two points \( x \) and $\( x' \)$ is given by:
+The RBF kernel between two points $\( x \)$ and $\( x' \)$ is given by:
 
-\[
+$$\[
 K(x, x') = \exp \left( -\frac{\|x - x'\|^2}{2\sigma^2} \right)
-\]
+\]$$
 
 Where:
-- \( \sigma \) is the kernel width (a hyperparameter).
-- \( \|x - x'\|^2 \) is the squared Euclidean distance between the two points.
+- $\( \sigma \)$ is the kernel width (a hyperparameter).
+- $\( \|x - x'\|^2 \)$ is the squared Euclidean distance between the two points.
 
 In **RFF**, we approximate this kernel by projecting the input data into a random feature space. The transformation is defined as:
 
-\[
+$$\[
 z(x) = \sqrt{\frac{2}{D}} \cos(Wx + b)
-\]
+\]$$
 
 Where:
-- \( W \) is a matrix of random samples drawn from a Gaussian distribution.
-- \( b \) is a vector of random biases.
-- \( D \) is the dimensionality of the random feature space.
+- $\( W \)$ is a matrix of random samples drawn from a Gaussian distribution.
+- $\( b \)$ is a vector of random biases.
+- $\( D \)$ is the dimensionality of the random feature space.
 
 Using these features, we can apply a simple linear model to approximate non-linear relationships.
 
@@ -53,35 +53,35 @@ Optimal Epoch: A balance must be struck by using techniques like early stopping,
 
 ## Task 2 (i): Image Reconstruction
 
-This task involves reconstructing an image by learning the mapping from pixel coordinates \( (X, Y) \) to pixel colors \( (R, G, B) \) using Random Fourier Features and Linear Regression.
+This task involves reconstructing an image by learning the mapping from pixel coordinates $\( (X, Y) \)$ to pixel colors $\( (R, G, B) \)$ using Random Fourier Features and Linear Regression.
 
 ### Steps Involved:
 
 #### 1. Training on Coordinate Map Directly:
-- We trained the model directly on pixel coordinates \( (X, Y) \), but the reconstruction quality was poor.
+- We trained the model directly on pixel coordinates $\( (X, Y) \)$, but the reconstruction quality was poor.
 
 #### 2. Polynomial Bias:
 - Added polynomial bias terms to the input coordinates to capture more complex relationships. This showed some improvement but was still not sufficient.
 
 #### 3. Using RBF Sampler (Random Fourier Features):
-- We transformed the coordinates \( (X, Y) \) into a higher-dimensional space using an RBF sampler. By experimenting with different values of \( \sigma \) and the number of components, we achieved significantly better results.
+- We transformed the coordinates $\( (X, Y) \)$ into a higher-dimensional space using an RBF sampler. By experimenting with different values of $\( \sigma \)$ and the number of components, we achieved significantly better results.
 
 #### Metrics:
 - **RMSE (Root Mean Squared Error)**: Measures the error between the original and reconstructed images.
   
-\[
+$$\[
 RMSE = \sqrt{\frac{1}{N} \sum_{i=1}^{N} (I_{orig}(i) - I_{rec}(i))^2}
-\]
+\]$$
 
-Where \( N \) is the number of pixels, \( I_{orig}(i) \) is the original pixel value, and \( I_{rec}(i) \) is the reconstructed pixel value.
+Where $\( N \)$ is the number of pixels, $\( I_{orig}(i) \)$ is the original pixel value, and $\( I_{rec}(i) \)$ is the reconstructed pixel value.
 
 - **PSNR (Peak Signal-to-Noise Ratio)**: Evaluates the quality of the reconstructed image compared to the original. It is given by:
 
-\[
+$$\[
 PSNR = 20 \cdot \log_{10} \left( \frac{MAX_{I}}{RMSE} \right)
-\]
+\]$$
 
-Where \( MAX_{I} \) is the maximum possible pixel value (e.g., 255 for 8-bit images).
+Where $\( MAX_{I} \)$ is the maximum possible pixel value (e.g., 255 for 8-bit images).
 
 ### Why PSNR for Images?
 PSNR is widely used for image reconstruction tasks because it measures the ratio between the maximum possible pixel value and the reconstruction error. A higher PSNR indicates a closer resemblance between the reconstructed and original image.
@@ -90,7 +90,7 @@ PSNR is widely used for image reconstruction tasks because it measures the ratio
 
 ## Task 2 (ii): Audio Reconstruction
 
-This task involves reconstructing a 5-second audio sample by learning the mapping from time \( t \) to amplitude \( A \) using Random Fourier Features and Linear Regression.
+This task involves reconstructing a 5-second audio sample by learning the mapping from time $\( t \)$ to amplitude $\( A \)$ using Random Fourier Features and Linear Regression.
 
 ### Steps Involved:
 
@@ -101,18 +101,18 @@ This task involves reconstructing a 5-second audio sample by learning the mappin
 - The audio is loaded using `librosa`, and its waveform and frequency spectrum are visualized.
 
 #### 3. Applying RFF and Linear Regression:
-- We applied RFF to map the time \( t \) to a higher-dimensional space and trained a Linear Regression model to learn the mapping from \( t \) to \( A \).
+- We applied RFF to map the time $\( t \)$ to a higher-dimensional space and trained a Linear Regression model to learn the mapping from $\( t \)$ to $\( A \)$.
 
 #### Metrics:
 - **RMSE (Root Mean Squared Error)**: Similar to image reconstruction, RMSE quantifies the reconstruction error between the original and reconstructed audio.
 
 - **SNR (Signal-to-Noise Ratio)**: Evaluates the quality of the reconstructed audio by comparing the signal's power to the noise's power. It is given by:
 
-\[
+$$\[
 SNR = 10 \cdot \log_{10} \left( \frac{P_{signal}}{P_{noise}} \right)
-\]
+\]$$
 
-Where \( P_{signal} \) is the power of the original signal and \( P_{noise} \) is the power of the noise (difference between the original and reconstructed signals).
+Where $\( P_{signal} \)$ is the power of the original signal and $\( P_{noise} \)$ is the power of the noise (difference between the original and reconstructed signals).
 
 ### Why SNR for Audio?
 SNR is commonly used for audio signals as it measures the clarity of the signal relative to the background noise. A higher SNR indicates better audio reconstruction quality.
@@ -124,7 +124,7 @@ SNR is commonly used for audio signals as it measures the clarity of the signal 
 ### Image Reconstruction:
 - **Direct Coordinate Mapping**: Poor results due to limited model capacity.
 - **Polynomial Bias**: Improved structure but lacked fine detail.
-- **RFF (with varying \( \sigma \) and components)**: Significant improvement in capturing details and overall structure.
+- **RFF (with varying $\( \sigma \)$ and components)**: Significant improvement in capturing details and overall structure.
 
 ### Audio Reconstruction:
 - **Original vs Reconstructed**: The reconstructed audio closely resembles the original, with minor errors in amplitude.
