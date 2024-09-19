@@ -7,11 +7,11 @@ This project covers two main tasks: Image Reconstruction and Audio Reconstructio
 Random Fourier Features (RFF) approximate kernel functions (such as the Radial Basis Function (RBF) kernel) by mapping input data into a higher-dimensional feature space. This allows linear models to approximate non-linear relationships. 
 
 ### Formula for RBF Kernel:
-The RBF kernel between two points \( x \) and \( x' \) is given by:
+The RBF kernel between two points $\( x \)$ and $\( x' \)$ is given by:
 
-\[
+$$\[
 K(x, x') = \exp \left( -\frac{\|x - x'\|^2}{2\sigma^2} \right)
-\]
+\]$$
 
 Where:
 - \( \sigma \) is the kernel width (a hyperparameter).
