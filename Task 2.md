@@ -43,6 +43,7 @@ By setting a `random_state`, you ensure:
 # Example: Setting a fixed random state
 rbf_sampler = RBFSampler(gamma=1.0, n_components=500, random_state=42)
 X_features = rbf_sampler.fit_transform(X)
+```
 
 Importance of Epoch Number During Training
 The number of epochs (iterations over the entire dataset) is crucial in model training as it affects the convergence and performance of the model:
