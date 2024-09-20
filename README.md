@@ -1,6 +1,6 @@
 # ES 335 Assignment-2
 
-## Team Members
+## Team Members(Bias Busters)
 
 1. [Shardul Junagade](https://github.com/ShardulJunagade)
 2. [Soham Gaonkar](https://github.com/Soham-Gaonkar)
