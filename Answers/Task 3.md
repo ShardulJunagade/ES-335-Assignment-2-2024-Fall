@@ -68,7 +68,7 @@ PSNR: 31.59 dB
 ```
 
 <div style="text-align: left;">
-  <img src="./images/Task3_images/coorect_recon.png" alt="Correct Reconstructed" width="600"/>
+  <img src="./images/Task3_images/correct_recon.png" alt="Correct Reconstructed" width="600"/>
 </div>
 
 
