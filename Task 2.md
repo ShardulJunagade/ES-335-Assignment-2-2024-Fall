@@ -58,35 +58,116 @@ The number of epochs (iterations over the entire dataset) is crucial in model tr
 This task involves reconstructing an image by learning the mapping from pixel coordinates $\( (X, Y) \)$ to pixel colors $\( (R, G, B) \)$ using Random Fourier Features and Linear Regression.
 
 ### Steps Involved:
-
 #### 1. Training on Coordinate Map Directly:
 - We trained the model directly on pixel coordinates $\( (X, Y) \)$, but the reconstruction quality was poor.
-![alt text](Images/LinearTrain.png)
+- MSE: 0.2578
+- PSNR: 11.78 dB
+
+<div style="text-align: left;">
+  <img src="Images/LinearTrain.png" alt="Linear Train" width="600"/>
+</div>
 
 #### 2. Polynomial Bias:
 - Added polynomial bias terms to the input coordinates to capture more complex relationships. This showed some improvement but was still not sufficient.
-![alt text](Images/Poly5Train.png)
-![alt text](Images/Poly10Train.png)
-![alt text](Images/Poly50Train.png)
+
+- 5 polynomial features
+- RMSE: 0.1918
+- PSNR: 14.34 dB
+
+<div style="text-align: left;">
+  <img src="Images/Poly5Train.png" alt="Poly 5 Train" width="600"/>
+</div>
+
+- 10 polynomial features
+- RMSE: 0.1734
+- PSNR: 15.22 dB
+
+<div style="text-align: left;">
+  <img src="Images/Poly10Train.png" alt="Poly 10 Train" width="600"/>
+</div>
+
+- 50 polynomial features
+- RMSE: 0.1698
+- PSNR: 15.40 dB
+
+<div style="text-align: left;">
+  <img src="Images/Poly50Train.png" alt="Poly 50 Train" width="600"/>
+</div>
 
 #### 3. Using RBF Sampler (Random Fourier Features):
-- -We transformed the coordinates $\( (X, Y) \)$ into a higher-dimensional space using an RBF sampler. 
-  ![alt text](Images/RFFTrain.png)
-  
-- By experimenting with different values of $\( \sigma \)$ and the number of components, we achieved significantly better results.And got an idea of the relation between sigma and number of features with image quality.
+- We transformed the coordinates $\( (X, Y) \)$ into a higher-dimensional space using an RBF sampler.
 
-**Parameter:Number of features:**
-![alt text](Images/RFF1k0.008.png)
-![alt text](Images/RFF5K0.008.png)
-![alt text](Images/RFF10k0.008.png)
-![alt text](Images/RFF15k0.008.png)
-![alt text](Images/RFFVSN_FEATURES.png)
+- RMSE: 0.0576
+- PSNR: 24.79 dB
 
-**Parameter:Sigma**
-![alt text](Images/RFF5k0.001.png)
-![alt text](Images/RFF5K0.01.png)
-![alt text](Images/RFF5k0.1.png)
-![alt text](Images/RFFVSSIGMA.png)
+<div style="text-align: left;">
+  <img src="Images/RFFTrain.png" alt="RFF Train" width="600"/>
+</div>
+
+- By experimenting with different values of $\( \sigma \)$ and the number of components, we achieved significantly better results and got an idea of the relation between sigma and number of features with image quality.
+
+#### Parameter: Number of features
+
+- RMSE: 0.3134
+- PSNR: 10.08 dB
+
+<div style="text-align: left;">
+  <img src="Images/RFF1k0.008.png" alt="RFF 1k" width="600"/>
+</div>
+
+- RMSE: 0.2256
+- PSNR: 12.93 dB
+
+<div style="text-align: left;">
+  <img src="Images/RFF5K0.008.png" alt="RFF 5k" width="600"/>
+</div>
+
+- RMSE: 0.1089
+- PSNR: 19.26 dB
+
+<div style="text-align: left;">
+  <img src="Images/RFF10k0.008.png" alt="RFF 10k" width="600"/>
+</div>
+
+- RMSE: 0.0885
+- PSNR: 21.06 dB
+
+<div style="text-align: left;">
+  <img src="Images/RFF15k0.008.png" alt="RFF 15k" width="600"/>
+</div>
+
+<div style="text-align: left;">
+  <img src="Images/RFFVSN_FEATURES.png" alt="RFF vs Features" width="600"/>
+</div>
+
+#### Parameter: Sigma
+
+- RMSE: 0.2974
+- PSNR: 10.53 dB
+
+<div style="text-align: left;">
+  <img src="Images/RFF5K0.001.png" alt="RFF 5k 0.001" width="600"/>
+</div>
+
+
+- RMSE: 0.1515
+- PSNR: 16.39 dB
+
+<div style="text-align: left;">
+  <img src="Images/RFF5K0.01.png" alt="RFF 5k 0.01" width="600"/>
+</div>
+
+- RMSE: 0.1179
+- PSNR: 18.57 dB
+
+<div style="text-align: left;">
+  <img src="Images/RFF5k0.1.png" alt="RFF 5k 0.1" width="600"/>
+</div>
+
+<div style="text-align: left;">
+  <img src="Images/RFFVSSIGMA.png" alt="RFF vs Sigma" width="600"/>
+</div>
+
 
 #### Metrics:
 - **RMSE (Root Mean Squared Error)**: Measures the error between the original and reconstructed images.
@@ -122,8 +203,38 @@ This task involves reconstructing a 5-second audio sample by learning the mappin
 #### 2. Loading and Analyzing Audio:
 - The audio is loaded using `librosa`, and its waveform and frequency spectrum are visualized.
 
+<div style="text-align: left;">
+  <img src="Images/OGWave.png" alt="RFF vs Sigma" width="600"/>
+</div>
+
+<div style="text-align: left;">
+  <img src="Images/OGFreq.png" alt="RFF vs Sigma" width="600"/>
+</div>
+
+<audio controls>
+<source src="Images\OriginalAudio.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
+
 #### 3. Applying RFF and Linear Regression:
 - We applied RFF to map the time $\( t \)$ to a higher-dimensional space and trained a Linear Regression model to learn the mapping from $\( t \)$ to $\( A \)$.
+
+<div style="text-align: left;">
+  <img src="Images/PredWave.png" alt="RFF vs Sigma" width="600"/>
+</div>
+
+<div style="text-align: left;">
+  <img src="Images/OGVSPred.png" alt="RFF vs Sigma" width="600"/>
+</div>
+
+<audio controls>
+<source src="Images\PredictedAudio.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
+
+- RMSE: 0.0249486081302166
+- SNR: 2.2682277858257294 dB
+
 
 #### Metrics:
 - **RMSE (Root Mean Squared Error)**: Similar to image reconstruction, RMSE quantifies the reconstruction error between the original and reconstructed audio.
@@ -150,9 +261,9 @@ SNR is commonly used for audio signals as it measures the clarity of the signal 
 
 ### Audio Reconstruction:
 - **Original vs Reconstructed**: The reconstructed audio closely resembles the original, with minor errors in amplitude.
-- **RMSE**: {{ RMSE_value }} for image reconstruction, {{ RMSE_value_audio }} for audio reconstruction.
-- **PSNR**: {{ PSNR_value }} dB for images.
-- **SNR**: {{ SNR_value }} dB for audio.
+- **RMSE**: 0.0576 for image reconstruction, 0.02495 for audio reconstruction.
+- **PSNR**: 24.79 dB dB for images.
+- **SNR**: 2.27 dB for audio.
 
 ---
 
@@ -165,10 +276,3 @@ SNR is commonly used for audio signals as it measures the clarity of the signal 
 - Librosa
 - yt-dlp
 - Pydub
-
-## Usage:
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-repo/image-audio-reconstruction.git
-   cd image-audio-reconstruction
