@@ -212,7 +212,7 @@ This task involves reconstructing a 5-second audio sample by learning the mappin
 </div>
 
 <audio controls>
-<source src="Images\OriginalAudio.wav" type="audio/wav">
+<source src="Images/OriginalAudio.wav" type="audio/wav">
   Your browser does not support the audio element.
 </audio>
 
@@ -228,7 +228,7 @@ This task involves reconstructing a 5-second audio sample by learning the mappin
 </div>
 
 <audio controls>
-<source src="Images\PredictedAudio.wav" type="audio/wav">
+<source src="Images/PredictedAudio.wav" type="audio/wav">
   Your browser does not support the audio element.
 </audio>
 
