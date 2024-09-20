@@ -1,4 +1,4 @@
-# Task 2: Image and Audio Reconstruction Project
+# Task-2 Image and Audio Reconstruction Project
 
 This project covers two main tasks: Image Reconstruction and Audio Reconstruction, using **Random Fourier Features (RFF)** and **Linear Regression**. The goal is to demonstrate the use of RFF in learning the mapping from coordinates to pixel colors for images and from time to amplitude for audio. The project also includes an evaluation of the reconstruction quality using **RMSE**, **PSNR** for images, and **SNR** for audio.
 
@@ -66,7 +66,7 @@ PSNR: 11.78 dB
 ```
 
 <div style="text-align: left;">
-  <img src="./images/Task2_images/LinearTrain.png" alt="Linear Train" width="600"/>
+  <img src="./assets/Task2_images/LinearTrain.png" alt="Linear Train" width="600"/>
 </div>
 
 #### 2. Polynomial Bias:
@@ -80,7 +80,7 @@ PSNR: 14.34 dB
 ```
 
 <div style="text-align: left;">
-  <img src="./images/Task2_images/Poly5Train.png" alt="Poly 5 Train" width="600"/>
+  <img src="./assets/Task2_images/Poly5Train.png" alt="Poly 5 Train" width="600"/>
 </div>
 
 - 10 polynomial features
@@ -90,7 +90,7 @@ PSNR: 15.22 dB
 ```
 
 <div style="text-align: left;">
-  <img src="./images/Task2_images/Poly10Train.png" alt="Poly 10 Train" width="600"/>
+  <img src="./assets/Task2_images/Poly10Train.png" alt="Poly 10 Train" width="600"/>
 </div>
 
 - 50 polynomial features
@@ -100,7 +100,7 @@ PSNR: 15.40 dB
 ```
 
 <div style="text-align: left;">
-  <img src="./images/Task2_images/Poly50Train.png" alt="Poly 50 Train" width="600"/>
+  <img src="./assets/Task2_images/Poly50Train.png" alt="Poly 50 Train" width="600"/>
 </div>
 
 #### 3. Using RBF Sampler (Random Fourier Features):
@@ -112,7 +112,7 @@ PSNR: 24.79 dB
 ```
 
 <div style="text-align: left;">
-  <img src="./images/Task2_images/RFFTrain.png" alt="RFF Train" width="600"/>
+  <img src="./assets/Task2_images/RFFTrain.png" alt="RFF Train" width="600"/>
 </div>
 
 - By experimenting with different values of $\( \sigma \)$ and the number of components, we achieved significantly better results and got an idea of the relation between sigma and number of features with image quality.
@@ -125,7 +125,7 @@ PSNR: 10.08 dB
 ```
 
 <div style="text-align: left;">
-  <img src="./images/Task2_images/RFF1k0.008.png" alt="RFF 1k" width="600"/>
+  <img src="./assets/Task2_images/RFF1k0.008.png" alt="RFF 1k" width="600"/>
 </div>
 
 ``` python
@@ -134,7 +134,7 @@ PSNR: 12.93 dB
 ```
 
 <div style="text-align: left;">
-  <img src="./images/Task2_images/RFF5K0.008.png" alt="RFF 5k" width="600"/>
+  <img src="./assets/Task2_images/RFF5K0.008.png" alt="RFF 5k" width="600"/>
 </div>
 
 ``` python
@@ -143,7 +143,7 @@ PSNR: 19.26 dB
 ```
 
 <div style="text-align: left;">
-  <img src="./images/Task2_images/RFF10k0.008.png" alt="RFF 10k" width="600"/>
+  <img src="./assets/Task2_images/RFF10k0.008.png" alt="RFF 10k" width="600"/>
 </div>
 
 ``` python
@@ -152,11 +152,11 @@ PSNR: 21.06 dB
 ```
 
 <div style="text-align: left;">
-  <img src="./images/Task2_images/RFF15k0.008.png" alt="RFF 15k" width="600"/>
+  <img src="./assets/Task2_images/RFF15k0.008.png" alt="RFF 15k" width="600"/>
 </div>
 
 <div style="text-align: left;">
-  <img src="./images/Task2_images/RFFVSN_FEATURES.png" alt="RFF vs Features" width="600"/>
+  <img src="./assets/Task2_images/RFFVSN_FEATURES.png" alt="RFF vs Features" width="600"/>
 </div>
 
 #### Parameter: Sigma
@@ -167,7 +167,7 @@ PSNR: 10.53 dB
 ```
 
 <div style="text-align: left;">
-  <img src="./images/Task2_images/RFF5K0.001.png" alt="RFF 5k 0.001" width="600"/>
+  <img src="./assets/Task2_images/RFF5K0.001.png" alt="RFF 5k 0.001" width="600"/>
 </div>
 
 
@@ -177,7 +177,7 @@ PSNR: 16.39 dB
 ```
 
 <div style="text-align: left;">
-  <img src="./images/Task2_images/RFF5K0.01.png" alt="RFF 5k 0.01" width="600"/>
+  <img src="./assets/Task2_images/RFF5K0.01.png" alt="RFF 5k 0.01" width="600"/>
 </div>
 
 ``` python
@@ -186,11 +186,11 @@ PSNR: 18.57 dB
 ```
 
 <div style="text-align: left;">
-  <img src="./images/Task2_images/RFF5K0.1.png" alt="RFF 5k 0.1" width="600"/>
+  <img src="./assets/Task2_images/RFF5K0.1.png" alt="RFF 5k 0.1" width="600"/>
 </div>
 
 <div style="text-align: left;">
-  <img src="./images/Task2_images/RFFVSSIGMA.png" alt="RFF vs Sigma" width="600"/>
+  <img src="./assets/Task2_images/RFFVSSIGMA.png" alt="RFF vs Sigma" width="600"/>
 </div>
 
 
@@ -229,15 +229,15 @@ This task involves reconstructing a 5-second audio sample by learning the mappin
 - The audio is loaded using `librosa`, and its waveform and frequency spectrum are visualized.
 
 <div style="text-align: left;">
-  <img src="./images/Task2_images/OGWave.png" alt="RFF vs Sigma" width="600"/>
+  <img src="./assets/Task2_images/OGWave.png" alt="RFF vs Sigma" width="600"/>
 </div>
 
 <div style="text-align: left;">
-  <img src="./images/Task2_images/OGFreq.png" alt="RFF vs Sigma" width="600"/>
+  <img src="./assets/Task2_images/OGFreq.png" alt="RFF vs Sigma" width="600"/>
 </div>
 
 <audio controls>
-<source src="./images/Task2_images/OriginalAudio.wav" type="audio/wav">
+<source src="./assets/Task2_images/OriginalAudio.wav" type="audio/wav">
   Your browser does not support the audio element.
 </audio>
 
@@ -245,21 +245,21 @@ This task involves reconstructing a 5-second audio sample by learning the mappin
 - We applied RFF to map the time $\( t \)$ to a higher-dimensional space and trained a Linear Regression model to learn the mapping from $\( t \)$ to $\( A \)$.
 
 <div style="text-align: left;">
-  <img src="./images/Task2_images/PredWave.png" alt="RFF vs Sigma" width="600"/>
+  <img src="./assets/Task2_images/PredWave.png" alt="RFF vs Sigma" width="600"/>
 </div>
 
 <div style="text-align: left;">
-  <img src="./images/Task2_images/OGVSPred.png" alt="RFF vs Sigma" width="600"/>
+  <img src="./assets/Task2_images/OGVSPred.png" alt="RFF vs Sigma" width="600"/>
 </div>
 
 <audio controls>
-<source src="./images/Task2_images/PredictedAudio.wav" type="audio/wav">
+<source src="./assets/Task2_images/PredictedAudio.wav" type="audio/wav">
   Your browser does not support the audio element.
 </audio>
 
 ``` python
-RMSE: 0.0249486081302166
-SNR: 2.2682277858257294 dB
+RMSE: 0.015551912598311901
+SNR: 6.372835040092468 dB
 ```
 
 #### Metrics:
@@ -287,9 +287,9 @@ SNR is commonly used for audio signals as it measures the clarity of the signal 
 
 ### Audio Reconstruction:
 - **Original vs Reconstructed**: The reconstructed audio closely resembles the original, with minor errors in amplitude.
-- **RMSE**: 0.0576 for image reconstruction, 0.02495 for audio reconstruction.
+- **RMSE**: 0.0576 for image reconstruction, 0.015 for audio reconstruction.
 - **PSNR**: 24.79 dB dB for images.
-- **SNR**: 2.27 dB for audio.
+- **SNR**: 6.37 dB for audio.
 
 ---
 

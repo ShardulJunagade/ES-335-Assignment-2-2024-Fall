@@ -12,13 +12,13 @@ Perform super-resolution on the given image to enhance its resolution by a facto
 - **Input Image**: The 400x400 high-resolution image.
 
 <div style="text-align: left;">
-  <img src="./images/Task3_images/OG400x400.png" alt="RFF 5k 0.1" width="600"/>
+  <img src="./assets/Task3_images/OG400x400.png" alt="RFF 5k 0.1" width="600"/>
 </div>
 
 - **Downsampling**: Resize to 200x200 to create the low-resolution image.
 
 <div style="text-align: left;">
-  <img src="./images/Task3_images/OG200x200.png" alt="RFF 5k 0.1" width="600"/>
+  <img src="./assets/Task3_images/OG200x200.png" alt="RFF 5k 0.1" width="600"/>
 </div>
 
 
@@ -41,7 +41,7 @@ PSNR: 31.53 dB
 ```
 
 <div style="text-align: left;">
-  <img src="./images/Task3_images/incorrect_recon.png" alt="RFF Incorrect" width="600"/>
+  <img src="./assets/Task3_images/incorrect_recon.png" alt="RFF Incorrect" width="600"/>
 </div>
 
 ``` python
@@ -50,10 +50,10 @@ PSNR: 3.54 dB
 ```
 
 <div style="text-align: left;">
-  <img src="./images/Task3_images/incorrect_super.png" alt="RFF Super" width="600"/>
+  <img src="./assets/Task3_images/incorrect_super.png" alt="RFF Super" width="600"/>
 </div>
 
-<!-- ![alt text](./images/Task3_images/incorrect_super.png) -->
+<!-- ![alt text](./assets/Task3_images/incorrect_super.png) -->
 
 
 **Why `random_state` is important**:
@@ -70,7 +70,7 @@ PSNR: 31.59 dB
 ```
 
 <div style="text-align: left;">
-  <img src="./images/Task3_images/coorect_recon.png" alt="RFF 5k 0.1" width="600"/>
+  <img src="./assets/Task3_images/coorect_recon.png" alt="RFF 5k 0.1" width="600"/>
 </div>
 
 
@@ -82,7 +82,7 @@ PSNR: 21.85 dB
 ```
   
 <div style="text-align: left;">
-  <img src="./images/Task3_images/correct_super.png" alt="RFF 5k 0.1" width="600"/>
+  <img src="./assets/Task3_images/correct_super.png" alt="RFF 5k 0.1" width="600"/>
 </div>
 
 Image SuperResolution (more "correct" way) :
@@ -93,5 +93,5 @@ PSNR: 20.21
 ```
 
 <div style="text-align: left;">
-  <img src="./images/Task3_images/Best_super.png" alt="RFF 5k 0.1" width="600"/>
+  <img src="./assets/Task3_images/Best_super.png" alt="RFF 5k 0.1" width="600"/>
 </div>

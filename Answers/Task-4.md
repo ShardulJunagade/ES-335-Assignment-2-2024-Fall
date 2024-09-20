@@ -1,4 +1,4 @@
-# Task 4 : Image Reconstruction using Matrix Factorisation
+# Task-4 Image Reconstruction using Matrix Factorisation
 
 # Question 1
 Q1. Pick an image of your liking and reconstruct it using matrix factorization. Choose a suitable value for the rank r. Run Gradient Descent until it converges, plot the reconstructed image alongside the original image. Calculate and report the RMSE and PSNR metrics.
@@ -7,11 +7,11 @@ Q1. Pick an image of your liking and reconstruct it using matrix factorization. 
 
 Initially, 30% of the chosen image was masked randomly and matrix factorization was performed to reconstruct the image using rank=50. The gradient descent converged after 5800 iterations and the reconstructed image which was formed can be shown as follows:
 
-![Image Reconstruction with Rank=50 and Mask=0.3](./images/task4_images/image-0.png)
+![Image Reconstruction with Rank=50 and Mask=0.3](./assets/task4_images/image-0.png)
 
 **Loss vs Epochs Graph:**
 
-<img src="./images/task4_images/image-1.png" alt="Loss vs Epochs" width="500"/>
+<img src="./assets/task4_images/image-1.png" alt="Loss vs Epochs" width="500"/>
 
 The following metrics were computed to evaluate the reconstruction quality:
 - **RMSE** (Root Mean Squared Error) = 0.0805
@@ -21,11 +21,11 @@ The following metrics were computed to evaluate the reconstruction quality:
 To find an optimal rank, I repeated the matrix factorization process with multiple ranks= [5, 10, 20, 50, 100, 150, 200, 400].
 
 The reconstructed images can be shown as below:
-![Image Reconstruction with varying Rank](./images/task4_images/image-2.png)
+![Image Reconstruction with varying Rank](./assets/task4_images/image-2.png)
 
 Graphs illustrating Loss vs Rank, RMSE vs Rank, and PSNR vs Rank are displayed below:
 
-![alt text](./images/task4_images/image-3.png)
+![alt text](./assets/task4_images/image-3.png)
 
 From the graphs, the optimal rank was determined to be 100 for the selected grayscale image.
 
@@ -62,7 +62,7 @@ To prevent this, we can use cross-validation to find the optimal rank or apply r
 
 I experimented with different mask proportions to explore how well the image reconstruction works and plotted the graphs PSNR and RMSE vs mask proportions.
 
-![alt text](./images/task4_images/image-4.png)
+![alt text](./assets/task4_images/image-4.png)
 
 ### Observations
 From the above graphs, we can observe that:
@@ -86,11 +86,11 @@ Q2. Consider a case where 900 pixels (30x30) are randomly missing from an image.
 
 A 30x30 patch was removed from a 300x300 image and matrix factorization with rank=50 was used to reconstruct the matrix with missing values. The gradient descent algorithm converged after 6260 iterations and the reconstructed image which was formed can be shown as follows:
 
-![Image Reconstruction with Rank=50 and Mask=30x30 patch](./images/task4_images/image-5.png)
+![Image Reconstruction with Rank=50 and Mask=30x30 patch](./assets/task4_images/image-5.png)
 
 **Loss vs Epochs Graph:**
 
-<img src="./images/task4_images/image-6.png" alt="Loss vs Epochs" width="500"/>
+<img src="./assets/task4_images/image-6.png" alt="Loss vs Epochs" width="500"/>
 
 The following metrics were computed:
 - **RMSE** = 0.0078
@@ -101,12 +101,12 @@ The following metrics were computed:
 To find an optimal rank, I repeated the matrix factorization process with multiple ranks= [5, 10, 20, 50, 100, 150, 200, 400].
 
 The reconstructed images can be shown as below:
-![alt text](./images/task4_images/image-7.png)
-![Image Reconstruction with varying Rank](./images/task4_images/image-8.png)
+![alt text](./assets/task4_images/image-7.png)
+![Image Reconstruction with varying Rank](./assets/task4_images/image-8.png)
 
 
 Graphs illustrating Loss vs Rank, RMSE vs Rank, and PSNR vs Rank are displayed below:
-![alt text](./images/task4_images/image-9.png)
+![alt text](./assets/task4_images/image-9.png)
 
 From the above graphs, the optimal rank was found to be 50 for chosen grayscale image.
 
@@ -136,7 +136,7 @@ After training the Ridge regression model, predictions for the missing pixel val
 This process was conducted separately for each color channel (Red, Green, and Blue), and the outputs were combined to produce the final reconstructed colored image, as shown below:
 
 
-![alt text](./images/task4_images/image-10.png)
+![alt text](./assets/task4_images/image-10.png)
 
 
 ```

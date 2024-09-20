@@ -30,12 +30,12 @@ First, we extracted three 50x50 patches from the image and then performed image 
 
 ## Patch-1
 
-<img src="./images/task5_images/image-0.png" alt="Patch-1" width="500"/>
+<img src="./assets/task5_images/image-0.png" alt="Patch-1" width="500"/>
 
 - **Rank = 5**
 
-    <img src="./images/task5_images/image-1.png" alt="Rank 5 Patch-1 Image 1" width="500"/>
-    <img src="./images/task5_images/image-2.png" alt="Rank 5 Patch-1 Image 2" width="500"/>
+    <img src="./assets/task5_images/image-1.png" alt="Rank 5 Patch-1 Image 1" width="500"/>
+    <img src="./assets/task5_images/image-2.png" alt="Rank 5 Patch-1 Image 2" width="500"/>
 
     ```
     RMSE: 0.006451
@@ -44,8 +44,8 @@ First, we extracted three 50x50 patches from the image and then performed image 
 
 - **Rank = 10**
 
-    <img src="./images/task5_images/image-3.png" alt="Rank 10 Patch-1 Image 1" width="500"/>
-    <img src="./images/task5_images/image-4.png" alt="Rank 10 Patch-1 Image 2" width="500"/>
+    <img src="./assets/task5_images/image-3.png" alt="Rank 10 Patch-1 Image 1" width="500"/>
+    <img src="./assets/task5_images/image-4.png" alt="Rank 10 Patch-1 Image 2" width="500"/>
 
     ```
     RMSE: 0.006834
@@ -54,8 +54,8 @@ First, we extracted three 50x50 patches from the image and then performed image 
 
 - **Rank = 25**
 
-    <img src="./images/task5_images/image-5.png" alt="Rank 25 Patch-1 Image 1" width="500"/>
-    <img src="./images/task5_images/image-6.png" alt="Rank 25 Patch-1 Image 2" width="500"/>
+    <img src="./assets/task5_images/image-5.png" alt="Rank 25 Patch-1 Image 1" width="500"/>
+    <img src="./assets/task5_images/image-6.png" alt="Rank 25 Patch-1 Image 2" width="500"/>
 
     ```
     RMSE: 0.003929
@@ -64,8 +64,8 @@ First, we extracted three 50x50 patches from the image and then performed image 
 
 - **Rank = 50**
 
-    <img src="./images/task5_images/image-7.png" alt="Rank 50 Patch-1 Image 1" width="500"/>
-    <img src="./images/task5_images/image-8.png" alt="Rank 50 Patch-1 Image 2" width="500"/>
+    <img src="./assets/task5_images/image-7.png" alt="Rank 50 Patch-1 Image 1" width="500"/>
+    <img src="./assets/task5_images/image-8.png" alt="Rank 50 Patch-1 Image 2" width="500"/>
 
     ```
     RMSE: 0.003483
@@ -74,17 +74,17 @@ First, we extracted three 50x50 patches from the image and then performed image 
 
 Graphs illustrating RMSE vs Rank and PSNR vs Rank for Patch-1 are displayed below:
 
-<img src="./images/task5_images/image-9.png" alt="RMSE vs Rank and PSNR vs Rank for Patch-1" width="800"/>
+<img src="./assets/task5_images/image-9.png" alt="RMSE vs Rank and PSNR vs Rank for Patch-1" width="800"/>
 
 
 ## Patch-2
 
-<img src="./images/task5_images/image-10.png" alt="Patch-2" width="500"/>
+<img src="./assets/task5_images/image-10.png" alt="Patch-2" width="500"/>
 
 - **Rank = 5**
 
-    <img src="./images/task5_images/image-11.png" alt="Rank 5 Patch-2 Image 1" width="500"/>
-    <img src="./images/task5_images/image-12.png" alt="Rank 5 Patch-2 Image 2" width="500"/>
+    <img src="./assets/task5_images/image-11.png" alt="Rank 5 Patch-2 Image 1" width="500"/>
+    <img src="./assets/task5_images/image-12.png" alt="Rank 5 Patch-2 Image 2" width="500"/>
 
     ```
     RMSE: 0.030466
@@ -93,8 +93,8 @@ Graphs illustrating RMSE vs Rank and PSNR vs Rank for Patch-1 are displayed belo
 
 - **Rank = 10**
 
-    <img src="./images/task5_images/image-13.png" alt="Rank 10 Patch-2 Image 1" width="500"/>
-    <img src="./images/task5_images/image-14.png" alt="Rank 10 Patch-2 Image 2" width="500"/>
+    <img src="./assets/task5_images/image-13.png" alt="Rank 10 Patch-2 Image 1" width="500"/>
+    <img src="./assets/task5_images/image-14.png" alt="Rank 10 Patch-2 Image 2" width="500"/>
 
     ```
     RMSE: 0.025922
@@ -103,8 +103,8 @@ Graphs illustrating RMSE vs Rank and PSNR vs Rank for Patch-1 are displayed belo
 
 - **Rank = 25**
 
-    <img src="./images/task5_images/image-15.png" alt="Rank 25 Patch-2 Image 1" width="500"/>
-    <img src="./images/task5_images/image-16.png" alt="Rank 25 Patch-2 Image 2" width="500"/>
+    <img src="./assets/task5_images/image-15.png" alt="Rank 25 Patch-2 Image 1" width="500"/>
+    <img src="./assets/task5_images/image-16.png" alt="Rank 25 Patch-2 Image 2" width="500"/>
 
     ```
     RMSE: 0.015575
@@ -113,8 +113,8 @@ Graphs illustrating RMSE vs Rank and PSNR vs Rank for Patch-1 are displayed belo
 
 - **Rank = 50**
 
-    <img src="./images/task5_images/image-17.png" alt="Rank 50 Patch-2 Image 1" width="500"/>
-    <img src="./images/task5_images/image-18.png" alt="Rank 50 Patch-2 Image 2" width="500"/>
+    <img src="./assets/task5_images/image-17.png" alt="Rank 50 Patch-2 Image 1" width="500"/>
+    <img src="./assets/task5_images/image-18.png" alt="Rank 50 Patch-2 Image 2" width="500"/>
 
     ```
     RMSE: 0.009523
@@ -123,17 +123,17 @@ Graphs illustrating RMSE vs Rank and PSNR vs Rank for Patch-1 are displayed belo
 
 Graphs illustrating RMSE vs Rank and PSNR vs Rank for Patch-2 are displayed below:
 
-<img src="./images/task5_images/image-19.png" alt="RMSE vs Rank and PSNR vs Rank for Patch-2" width="800"/>
+<img src="./assets/task5_images/image-19.png" alt="RMSE vs Rank and PSNR vs Rank for Patch-2" width="800"/>
 
 
 ## Patch-3
 
-<img src="./images/task5_images/image-20.png" alt="Patch-3" width="500"/>
+<img src="./assets/task5_images/image-20.png" alt="Patch-3" width="500"/>
 
 - **Rank = 5**
 
-    <img src="./images/task5_images/image-21.png" alt="Rank 5 Patch-3 Image 1" width="500"/>
-    <img src="./images/task5_images/image-22.png" alt="Rank 5 Patch-3 Image 2" width="500"/>
+    <img src="./assets/task5_images/image-21.png" alt="Rank 5 Patch-3 Image 1" width="500"/>
+    <img src="./assets/task5_images/image-22.png" alt="Rank 5 Patch-3 Image 2" width="500"/>
 
     ```
     RMSE: 0.031112
@@ -142,8 +142,8 @@ Graphs illustrating RMSE vs Rank and PSNR vs Rank for Patch-2 are displayed belo
 
 - **Rank = 10**
 
-    <img src="./images/task5_images/image-23.png" alt="Rank 10 Patch-3 Image 1" width="500"/>
-    <img src="./images/task5_images/image-24.png" alt="Rank 10 Patch-3 Image 2" width="500"/>
+    <img src="./assets/task5_images/image-23.png" alt="Rank 10 Patch-3 Image 1" width="500"/>
+    <img src="./assets/task5_images/image-24.png" alt="Rank 10 Patch-3 Image 2" width="500"/>
 
     ```
     RMSE: 0.023612
@@ -152,8 +152,8 @@ Graphs illustrating RMSE vs Rank and PSNR vs Rank for Patch-2 are displayed belo
 
 - **Rank = 25**
 
-    <img src="./images/task5_images/image-25.png" alt="Rank 25 Patch-3 Image 1" width="500"/>
-    <img src="./images/task5_images/image-26.png" alt="Rank 25 Patch-3 Image 2" width="500"/>
+    <img src="./assets/task5_images/image-25.png" alt="Rank 25 Patch-3 Image 1" width="500"/>
+    <img src="./assets/task5_images/image-26.png" alt="Rank 25 Patch-3 Image 2" width="500"/>
 
     ```
     RMSE: 0.017403
@@ -162,8 +162,8 @@ Graphs illustrating RMSE vs Rank and PSNR vs Rank for Patch-2 are displayed belo
 
 - **Rank = 50**
 
-    <img src="./images/task5_images/image-27.png" alt="Rank 50 Patch-3 Image 1" width="500"/>
-    <img src="./images/task5_images/image-28.png" alt="Rank 50 Patch-3 Image 2" width="500"/>
+    <img src="./assets/task5_images/image-27.png" alt="Rank 50 Patch-3 Image 1" width="500"/>
+    <img src="./assets/task5_images/image-28.png" alt="Rank 50 Patch-3 Image 2" width="500"/>
 
     ```
     RMSE: 0.008954
@@ -172,5 +172,5 @@ Graphs illustrating RMSE vs Rank and PSNR vs Rank for Patch-2 are displayed belo
 
 Graphs illustrating RMSE vs Rank and PSNR vs Rank for Patch-3 are displayed below:
 
-<img src="./images/task5_images/image-29.png" alt="RMSE vs Rank and PSNR vs Rank for Patch-3" width="800"/>
+<img src="./assets/task5_images/image-29.png" alt="RMSE vs Rank and PSNR vs Rank for Patch-3" width="800"/>
 

@@ -7,9 +7,10 @@ torchvision
 einops
 scikit-learn
 pillow
-<<<<<<< HEAD
-=======
 librosa
 yt-dlp
 pydub
->>>>>>> Shardul
+ipython
+imageio
+soundfile
+joblib
