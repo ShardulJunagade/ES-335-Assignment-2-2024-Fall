@@ -12,7 +12,7 @@ Perform super-resolution on the given image to enhance its resolution by a facto
 - **Input Image**: The 400x400 high-resolution image.
   
 <div style="text-align: left;">
-  <img src="./images/Task3_images/OG400x400.png" alt="riginal " width="600"/>
+  <img src="./images/Task3_images/OG400X400.png" alt="Original " width="600"/>
 </div>
 
 - **Downsampling**: Resize to 200x200 to create the low-resolution image.
@@ -35,6 +35,8 @@ Implementing RFF without setting a random state can lead to inconsistent results
 **What's wrong?**:
 - Without a fixed random state, each run will produce a different set of random Fourier features, causing the model's predictions to vary unpredictably. This inconsistency makes it hard to evaluate the model's true performance.
 
+- The image is trained and test on the same dataset of lower resolution .(Since both the datasets are stored in one variable - calculated once - there is no difference). High value of SNR and low value of MSE indicate good image quality.
+
 ``` python
 RMSE: 0.0265
 PSNR: 31.53 dB
@@ -43,6 +45,10 @@ PSNR: 31.53 dB
 <div style="text-align: left;">
   <img src="./images/Task3_images/incorrect_recon.png" alt="RFF Incorrect" width="600"/>
 </div>
+
+
+- The image is trained on lower resolution and made to predict on higher resolution. Here , we notice poor value of SNR and higher value of MSE which indicates very bad image quality , which can also be seen by the noisy image that is created. This is because our trained and testing data are created with  different random fourier feature basis which leads to different featurised vectors , leading to incorrect transformation ( $\theta$*t+b) , which leads to bad results.
+
 
 ``` python
 RMSE: 0.6652
@@ -54,6 +60,7 @@ PSNR: 3.54 dB
 </div>
 
 
+
 **Why `random_state` is important**:
 - The `random_state` parameter ensures reproducibility by controlling the randomness in operations like feature transformation. By fixing the random state, the same set of features and predictions can be obtained each time the code is run, which is crucial for consistent model evaluation and debugging.
 
@@ -61,6 +68,8 @@ PSNR: 3.54 dB
 Set a fixed `random_state` (or seed) when creating random features. This guarantees that the same random features are used every time, leading to consistent and reproducible results.
 
 ##### Image Reconstruction :
+
+- The image is trained on lower dimension and tested on the same dimension ,which gives good results ,so atleast we know that our code is working.Now we need to test for predicting on higher dimensional image.
 
 ``` python
 RMSE: 0.0263
@@ -74,6 +83,8 @@ PSNR: 31.59 dB
 
 ##### Image SuperResolution:
 
+- The image is trained on lower dimension and tested on the higher dimension .We have a decent value of PSNR and a low RMSE which indicates that quality of image is good.
+
 ``` python
 RMSE: 0.0808
 PSNR: 21.85 dB
@@ -85,7 +96,7 @@ PSNR: 21.85 dB
 
 Image SuperResolution (more "correct" way) :
 
-- This appears worse than the previous one , isnce the linear regression model learns better with scaled input values , hence the tradeoff between scaling properly.
+- This appears worse than the previous one , this is sinnce the linear regression model learns better with scaled input values , hence the tradeoff between scaling properly and predicting on the scaled coordinate map .
 
 ``` python
 RMSE: 8.26 (not scaled -> on scaling i get = 8.26255/255 = (0.0323)
