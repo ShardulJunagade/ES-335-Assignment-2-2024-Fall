@@ -36,20 +36,22 @@ Using these features, we can apply a simple linear model to approximate non-line
 When generating Random Fourier Features using the `RBFSampler`, it’s crucial to fix the `random_state` parameter for reproducibility. Without a fixed `random_state`, the random samples used to approximate the RBF kernel will differ on every execution, leading to different feature transformations, which could result in inconsistent model performance and evaluation metrics.
 
 By setting a `random_state`, you ensure:
-1. **Consistency**: The model always works with the same random features, allowing for reproducible results.
+1. **Consistency**: The model always works with the same random features, allowing for reproducible results.This is **the most** important factor when considering Image SuperResoltuion.
 2. **Fair Comparison**: When you tune hyperparameters (like the number of components or sigma), keeping the `random_state` fixed ensures you're comparing models fairly on the same feature transformation.
 
 ```python
 # Example: Setting a fixed random state
 rbf_sampler = RBFSampler(gamma=1.0, n_components=500, random_state=42)
 X_features = rbf_sampler.fit_transform(X)
+```
 
-Importance of Epoch Number During Training
+**Importance of Epoch Number During Training**-
+
 The number of epochs (iterations over the entire dataset) is crucial in model training as it affects the convergence and performance of the model:
 
-Underfitting: If the model is trained for too few epochs, it may not have enough iterations to learn the underlying patterns, leading to underfitting (poor training and test performance).
-Overfitting: On the other hand, if the model is trained for too many epochs, it may start to overfit the training data, capturing noise and reducing generalization on unseen data.
-Optimal Epoch: A balance must be struck by using techniques like early stopping, where training is halted when the validation error stops decreasing, ensuring the model generalizes well.
+-Underfitting: If the model is trained for too few epochs, it may not have enough iterations to learn the underlying patterns, leading to underfitting (poor training and test performance).
+-Overfitting: On the other hand, if the model is trained for too many epochs, it may start to overfit the training data, capturing noise and reducing generalization on unseen data.
+-Optimal Epoch: A balance must be struck by using techniques like early stopping, where training is halted when the validation error stops decreasing, ensuring the model generalizes well.
 
 ## Task 2 (i): Image Reconstruction
 
@@ -59,12 +61,32 @@ This task involves reconstructing an image by learning the mapping from pixel co
 
 #### 1. Training on Coordinate Map Directly:
 - We trained the model directly on pixel coordinates $\( (X, Y) \)$, but the reconstruction quality was poor.
+![alt text](Images/LinearTrain.png)
 
 #### 2. Polynomial Bias:
 - Added polynomial bias terms to the input coordinates to capture more complex relationships. This showed some improvement but was still not sufficient.
+![alt text](Images/Poly5Train.png)
+![alt text](Images/Poly10Train.png)
+![alt text](Images/Poly50Train.png)
 
 #### 3. Using RBF Sampler (Random Fourier Features):
-- We transformed the coordinates $\( (X, Y) \)$ into a higher-dimensional space using an RBF sampler. By experimenting with different values of $\( \sigma \)$ and the number of components, we achieved significantly better results.
+- -We transformed the coordinates $\( (X, Y) \)$ into a higher-dimensional space using an RBF sampler. 
+  ![alt text](Images/RFFTrain.png)
+  
+- By experimenting with different values of $\( \sigma \)$ and the number of components, we achieved significantly better results.And got an idea of the relation between sigma and number of features with image quality.
+
+**Parameter:Number of features:**
+![alt text](Images/RFF1k0.008.png)
+![alt text](Images/RFF5K0.008.png)
+![alt text](Images/RFF10k0.008.png)
+![alt text](Images/RFF15k0.008.png)
+![alt text](Images/RFFVSN_FEATURES.png)
+
+**Parameter:Sigma**
+![alt text](Images/RFF5k0.001.png)
+![alt text](Images/RFF5K0.01.png)
+![alt text](Images/RFF5k0.1.png)
+![alt text](Images/RFFVSSIGMA.png)
 
 #### Metrics:
 - **RMSE (Root Mean Squared Error)**: Measures the error between the original and reconstructed images.
