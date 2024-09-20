@@ -161,7 +161,7 @@ This task involves reconstructing an image by learning the mapping from pixel co
 - PSNR: 18.57 dB
 
 <div style="text-align: left;">
-  <img src="Images/RFF5k0.1.png" alt="RFF 5k 0.1" width="600"/>
+  <img src="Images/RFF5K0.1.png" alt="RFF 5k 0.1" width="600"/>
 </div>
 
 <div style="text-align: left;">
