@@ -1,4 +1,11 @@
-# Assignment 2 
+# ES 335 Assignment-2
+
+## Team Members
+
+1. [Shardul Junagade](https://github.com/ShardulJunagade)
+2. [Soham Gaonkar](https://github.com/Soham-Gaonkar)
+3. [Umang Shikarvar](https://github.com/Umang-Shikarvar)
+4. [Sharvari Mirge](https://github.com/msharvari31)
 
 **Total marks: 10 (This assignment total to 20, we will overall scale by a factor of 0.5)**
 
