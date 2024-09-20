@@ -7,3 +7,9 @@ torchvision
 einops
 scikit-learn
 pillow
+<<<<<<< HEAD
+=======
+librosa
+yt-dlp
+pydub
+>>>>>>> Shardul
