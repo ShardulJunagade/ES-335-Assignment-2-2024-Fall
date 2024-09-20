@@ -60,8 +60,10 @@ This task involves reconstructing an image by learning the mapping from pixel co
 ### Steps Involved:
 #### 1. Training on Coordinate Map Directly:
 - We trained the model directly on pixel coordinates $\( (X, Y) \)$, but the reconstruction quality was poor.
-- MSE: 0.2578
-- PSNR: 11.78 dB
+``` python
+RMSE: 0.2578
+PSNR: 11.78 dB
+```
 
 <div style="text-align: left;">
   <img src="Images/LinearTrain.png" alt="Linear Train" width="600"/>
@@ -71,24 +73,31 @@ This task involves reconstructing an image by learning the mapping from pixel co
 - Added polynomial bias terms to the input coordinates to capture more complex relationships. This showed some improvement but was still not sufficient.
 
 - 5 polynomial features
-- RMSE: 0.1918
-- PSNR: 14.34 dB
+
+``` python
+RMSE: 0.1918
+PSNR: 14.34 dB
+```
 
 <div style="text-align: left;">
   <img src="Images/Poly5Train.png" alt="Poly 5 Train" width="600"/>
 </div>
 
 - 10 polynomial features
-- RMSE: 0.1734
-- PSNR: 15.22 dB
+``` python
+RMSE: 0.1734
+PSNR: 15.22 dB
+```
 
 <div style="text-align: left;">
   <img src="Images/Poly10Train.png" alt="Poly 10 Train" width="600"/>
 </div>
 
 - 50 polynomial features
-- RMSE: 0.1698
-- PSNR: 15.40 dB
+``` python
+RMSE: 0.1698
+PSNR: 15.40 dB
+```
 
 <div style="text-align: left;">
   <img src="Images/Poly50Train.png" alt="Poly 50 Train" width="600"/>
@@ -97,8 +106,10 @@ This task involves reconstructing an image by learning the mapping from pixel co
 #### 3. Using RBF Sampler (Random Fourier Features):
 - We transformed the coordinates $\( (X, Y) \)$ into a higher-dimensional space using an RBF sampler.
 
-- RMSE: 0.0576
-- PSNR: 24.79 dB
+``` python
+RMSE: 0.0576
+PSNR: 24.79 dB
+```
 
 <div style="text-align: left;">
   <img src="Images/RFFTrain.png" alt="RFF Train" width="600"/>
@@ -108,29 +119,37 @@ This task involves reconstructing an image by learning the mapping from pixel co
 
 #### Parameter: Number of features
 
-- RMSE: 0.3134
-- PSNR: 10.08 dB
+``` python
+RMSE: 0.3134
+PSNR: 10.08 dB
+```
 
 <div style="text-align: left;">
   <img src="Images/RFF1k0.008.png" alt="RFF 1k" width="600"/>
 </div>
 
-- RMSE: 0.2256
-- PSNR: 12.93 dB
+``` python
+RMSE: 0.2256
+PSNR: 12.93 dB
+```
 
 <div style="text-align: left;">
   <img src="Images/RFF5K0.008.png" alt="RFF 5k" width="600"/>
 </div>
 
-- RMSE: 0.1089
-- PSNR: 19.26 dB
+``` python
+RMSE: 0.1089
+PSNR: 19.26 dB
+```
 
 <div style="text-align: left;">
   <img src="Images/RFF10k0.008.png" alt="RFF 10k" width="600"/>
 </div>
 
-- RMSE: 0.0885
-- PSNR: 21.06 dB
+``` python
+RMSE: 0.0885
+PSNR: 21.06 dB
+```
 
 <div style="text-align: left;">
   <img src="Images/RFF15k0.008.png" alt="RFF 15k" width="600"/>
@@ -142,23 +161,29 @@ This task involves reconstructing an image by learning the mapping from pixel co
 
 #### Parameter: Sigma
 
-- RMSE: 0.2974
-- PSNR: 10.53 dB
+``` python
+RMSE: 0.2974
+PSNR: 10.53 dB
+```
 
 <div style="text-align: left;">
   <img src="Images/RFF5K0.001.png" alt="RFF 5k 0.001" width="600"/>
 </div>
 
 
-- RMSE: 0.1515
-- PSNR: 16.39 dB
+``` python
+RMSE: 0.1515
+PSNR: 16.39 dB
+```
 
 <div style="text-align: left;">
   <img src="Images/RFF5K0.01.png" alt="RFF 5k 0.01" width="600"/>
 </div>
 
-- RMSE: 0.1179
-- PSNR: 18.57 dB
+``` python
+RMSE: 0.1179
+PSNR: 18.57 dB
+```
 
 <div style="text-align: left;">
   <img src="Images/RFF5K0.1.png" alt="RFF 5k 0.1" width="600"/>
@@ -232,7 +257,8 @@ This task involves reconstructing a 5-second audio sample by learning the mappin
   Your browser does not support the audio element.
 </audio>
 
-- RMSE: 0.0249486081302166
+``` python
+RMSE: 0.0249486081302166
 - SNR: 2.2682277858257294 dB
 
 

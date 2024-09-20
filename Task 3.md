@@ -31,21 +31,26 @@ Perform super-resolution on the given image to enhance its resolution by a facto
 #### The Wrong Way:
 Implementing RFF without setting a random state can lead to inconsistent results in the transformed features, resulting in variations in the predicted high-resolution images.
 
-<div style="text-align: left;">
-  <img src="Images/RFF5K0.1.png" alt="RFF 5k 0.1" width="600"/>
-</div>
-
 
 **What's wrong?**:
 - Without a fixed random state, each run will produce a different set of random Fourier features, causing the model's predictions to vary unpredictably. This inconsistency makes it hard to evaluate the model's true performance.
 
+``` python
+RMSE: 0.0265
+PSNR: 31.53 dB
+```
+
 <div style="text-align: left;">
-  <img src="Images\inorrect_recon.png" alt="RFF 5k 0.1" width="600"/>
+  <img src="Images/incorrect_recon.png" alt="RFF Incorrect" width="600"/>
 </div>
 
+``` python
+RMSE: 0.6652
+PSNR: 3.54 dB
+```
 
 <div style="text-align: left;">
-  <img src="" alt="Images\incorrect_super.png" width="600"/>
+  <img src="Images/incorrect_super.png" alt="RFF Super" width="600"/>
 </div>
 
 <!-- ![alt text](Images/incorrect_super.png) -->
@@ -57,14 +62,36 @@ Implementing RFF without setting a random state can lead to inconsistent results
 #### The Correct Way:
 Set a fixed `random_state` (or seed) when creating random features. This guarantees that the same random features are used every time, leading to consistent and reproducible results.
 
+##### Image Reconstruction :
+
+``` python
+RMSE: 0.0263
+PSNR: 31.59 dB
+```
+
 <div style="text-align: left;">
   <img src="Images/coorect_recon.png" alt="RFF 5k 0.1" width="600"/>
 </div>
 
+
+##### Image SuperResolution:
+
+``` python
+RMSE: 0.0808
+PSNR: 21.85 dB
+```
+  
 <div style="text-align: left;">
-  <img src="Images\correct_super.png" alt="RFF 5k 0.1" width="600"/>
+  <img src="Images/correct_super.png" alt="RFF 5k 0.1" width="600"/>
 </div>
 
+Image SuperResolution (more "correct" way) :
+
+``` python
+RMSE: 8.26 (not scaled -> on scaling i get = 8.26/(0.0323)
+PSNR: 20.21
+```
+
 <div style="text-align: left;">
-  <img src="Images\Best_super.png" alt="RFF 5k 0.1" width="600"/>
+  <img src="Images/Best_super.png" alt="RFF 5k 0.1" width="600"/>
 </div>
