@@ -253,13 +253,13 @@ This task involves reconstructing a 5-second audio sample by learning the mappin
 </div>
 
 <audio controls>
-<source src="./images/Task2_images/PredictedAudio.wav" type="audio/wav">
+<source src="./images/Task2_images/pred_audio.wav" type="audio/wav">
   Your browser does not support the audio element.
 </audio>
 
 ``` python
-RMSE: 0.0249486081302166
-SNR: 2.2682277858257294 dB
+RMSE: 0.015551912598311901
+SNR: 6.372835040092468 dB
 ```
 
 #### Metrics:
@@ -289,7 +289,7 @@ SNR is commonly used for audio signals as it measures the clarity of the signal 
 - **Original vs Reconstructed**: The reconstructed audio closely resembles the original, with minor errors in amplitude.
 - **RMSE**: 0.0576 for image reconstruction, 0.02495 for audio reconstruction.
 - **PSNR**: 24.79 dB dB for images.
-- **SNR**: 2.27 dB for audio.
+- **SNR**: 6.37 dB for audio.
 
 ---
 
