@@ -94,17 +94,5 @@ PSNR: 21.85 dB
   <img src="./images/Task3_images/correct_super.png" alt="Correct Superresolution" width="600"/>
 </div>
 
-Image SuperResolution (more "correct" way) :
-
-- This appears worse than the previous one , this is since the linear regression model learns better with scaled input values , hence the tradeoff between scaling properly and predicting on the scaled coordinate map .
--  (0.0,100.0) [ point on coordinate map of 400x400] -> (0.0,50.0) Vs (0.0,100.0) [ point on coordinate map of 400x400] -> (0.0,50.0) -> (-1,0.5) [Scaling to -1,1]
-  
-
-``` python
-RMSE: 0.0323
-PSNR: 20.21
-```
-
-<div style="text-align: left;">
-  <img src="./images/Task3_images/Best_super.png" alt="Best superresolution" width="600"/>
-</div>
+#### Overview of scaling 
+-   (0.0,100.0) [ point on coordinate map of 400x400] -> (0.0,50.0) -> (-1,0.5) [Scaling to -1,1]
