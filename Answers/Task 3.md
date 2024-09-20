@@ -10,7 +10,7 @@ Perform super-resolution on the given image to enhance its resolution by a facto
 
 #### Implementation Highlights:
 - **Input Image**: The 400x400 high-resolution image.
-- 
+  
 <div style="text-align: left;">
   <img src="./images/Task3_images/OG400x400.png" alt="RFF 5k 0.1" width="600"/>
 </div>
@@ -88,7 +88,7 @@ PSNR: 21.85 dB
 Image SuperResolution (more "correct" way) :
 
 ``` python
-RMSE: 8.26 (not scaled -> on scaling i get = 8.26/(0.0323)
+RMSE: 8.26 (not scaled -> on scaling i get = 8.26255/255 = (0.0323)
 PSNR: 20.21
 ```
 
